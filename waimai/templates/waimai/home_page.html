@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+   <h1>Prince Benson Fusion Restaurant</h1>
+   <p>Tasty Treats To Your Door</p>
+
+   <h2>here are all our items!</h2>
+
+   <p>italy noodles:45RMB</p>
+   <img src="http://travelnoire.com/wp-content/uploads/2013/11/pasta.jpg">
+   <br>
+
+   <p>buger:20RMB</p>
+   <img src="http://myfoodvoice.me/wp-content/uploads/2011/03/Burgers.jpg">
+
+   <p>chips:15RMB</p>
+   <img src="https://drinks-dvq6ncf.netdna-ssl.com/wordpress/wp-content/uploads/2015/03/CHIPS.jpg">
+   
+<h2>Place your Order</h2>
+
+	<form action="{% url 'waimai:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="item" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Item Ordered: {{item}}</p>
+	<p>Delivery Address: {{address}}</p>
+ 
+</body>
+</html>
